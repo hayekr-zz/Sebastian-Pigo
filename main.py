@@ -4,7 +4,12 @@ import time
 
 class Pigo:
 
-    isMoving = False
+    ######
+    ###### BASIC STATUS AND METHODS
+    ######
+
+    #key value dictionary for basic state of pigo
+    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175}
 
     def __init__(self):
         print "Boop Beep"
@@ -22,6 +27,14 @@ class Pigo:
         while fwd() != 1:
             time.sleep(0.1)
             print "ERROR 02: Can't move fwd"
+
+    ######
+    ###### COMPLEX METHODS
+    ######
+
+    ######
+    ###### MAIN APP STARTS HERE
+    ######
 
 myPigo = Pigo()
 myPigo.fwd()
