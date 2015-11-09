@@ -2,17 +2,21 @@ __author__ = 'Sebastian'
 from gopigo import *
 import time
 
+#global variables begin here
+STOP_DISTANCE = 50
+#global variables begin here
+
 class Pigo:
 
     ######
     ###### BASIC STATUS AND METHODS
     ######
-
     #key value dictionary for basic state of pigo
-    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175}
+    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175, 'dist' : 100}
 
     def __init__(self):
-        print "Boop Beep"
+        print "I am alive with the magic of friendship!"
+        status['dist'] = us_dist(15)
 
     #named after method stop() in GoPiGo lib
     def stop(self):
@@ -30,15 +34,38 @@ class Pigo:
             fwd()
             print "ERROR 02: Can't move fwd"
 
+    #used to tell the main loop to keep going unless something goes wrong
+    def keepGoing(self):
+        if self.status['dist'] < STOP_DISTANCE:
+            return False
+        else:
+            return True
+
+    #used to check distance
+    def checkDistance(self):
+        self.status['dist'] = us_dist(15)
+        print "dist = " + str(self.status['dist']) + " mm"
+
     ######
     ###### COMPLEX METHODS
     ######
 
-    ######
-    ###### MAIN APP STARTS HERE
-    ######
+    def dance(self:
+        print "MONEY"
+        self.spin()
+        self.shuffle()
 
-myPigo = Pigo()
-myPigo.fwd()
-time.sleep(2)
-myPigo.stop()
+
+######
+###### MAIN APP STARTS HERE
+######
+pinkie = Pigo()
+
+while pinkie.keepGoing():
+    pinkie.checkDistance()
+    pinkie.fwd()
+    time.sleep(2)
+    pinkie.stop()
+
+pinkie.stop()
+del pinkie
