@@ -16,16 +16,18 @@ class Pigo:
 
     #named after method stop() in GoPiGo lib
     def stop(self):
-        self.isMoving = False
-        while stop() != 1:
+        self.status['ismoving'] = False
+        for x in range(3):
             time.sleep(0.1)
+            stop()
             print "ERROR 01: Can't stop"
 
     #named after method fwd() in GoPiGo lib
     def fwd(self):
-        self.isMoving = True
-        while fwd() != 1:
+        self.status['ismoving'] = True
+        for x in range(3):
             time.sleep(0.1)
+            fwd()
             print "ERROR 02: Can't move fwd"
 
     ######
