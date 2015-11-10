@@ -2,7 +2,7 @@ __author__ = 'Sebastian'
 import sys
 from gopigo import *
 
-command = str(sys.argv)
+command = str(sys.argv[1])
 
 if command == "fwd":
     for x in range(5):
