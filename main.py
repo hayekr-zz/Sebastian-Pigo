@@ -38,6 +38,9 @@ class Pigo:
     def keepGoing(self):
         if self.status['dist'] < STOP_DISTANCE:
             return False
+        elif volt() > 14 or volt() < 6:
+            print "WARNING 02: Voltage outside of safe range: " + str(volt())
+            return False
         else:
             return True
 
@@ -50,7 +53,7 @@ class Pigo:
     ###### COMPLEX METHODS
     ######
 
-    def dance(self:
+    def dance(self):
         print "MONEY"
         self.spin()
         self.shuffle()
