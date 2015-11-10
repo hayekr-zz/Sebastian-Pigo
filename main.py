@@ -22,7 +22,7 @@ class Pigo:
     def stop(self):
         self.status['ismoving'] = False
         print "Stop"
-        for x in range(3):
+        for x in range(5):
             time.sleep(0.1)
             stop()
 
@@ -30,7 +30,7 @@ class Pigo:
     def fwd(self):
         self.status['ismoving'] = True
         print "Fwd"
-        for x in range(3):
+        for x in range(5):
             time.sleep(0.1)
             fwd()
 
