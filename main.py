@@ -16,7 +16,7 @@ class Pigo:
 
     def __init__(self):
         print "I am alive with the magic of friendship!"
-        status['dist'] = us_dist(15)
+        self.status['dist'] = us_dist(15)
 
     #named after method stop() in GoPiGo lib
     def stop(self):
