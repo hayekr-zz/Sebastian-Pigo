@@ -67,7 +67,7 @@ pinkie = Pigo()
 while pinkie.keepGoing():
     pinkie.checkDistance()
     pinkie.fwd()
-    time.sleep(2)
+    time.sleep(.1)
     pinkie.stop()
 
 pinkie.stop()
