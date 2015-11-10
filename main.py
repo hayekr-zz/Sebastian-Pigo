@@ -21,18 +21,18 @@ class Pigo:
     #named after method stop() in GoPiGo lib
     def stop(self):
         self.status['ismoving'] = False
+        print "Stop"
         for x in range(3):
             time.sleep(0.1)
             stop()
-            print "ERROR 01: Can't stop"
 
     #named after method fwd() in GoPiGo lib
     def fwd(self):
         self.status['ismoving'] = True
+        print "Fwd"
         for x in range(3):
             time.sleep(0.1)
             fwd()
-            print "ERROR 02: Can't move fwd"
 
     #used to tell the main loop to keep going unless something goes wrong
     def keepGoing(self):
@@ -70,6 +70,7 @@ while pinkie.keepGoing():
     pinkie.fwd()
     time.sleep(.1)
     pinkie.stop()
+    pinkie.checkDistance()
 
 pinkie.stop()
 del pinkie
