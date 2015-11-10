@@ -37,6 +37,7 @@ class Pigo:
     #used to tell the main loop to keep going unless something goes wrong
     def keepGoing(self):
         if self.status['dist'] < STOP_DISTANCE:
+            print "WARNING 03: Too close to object"
             return False
         elif volt() > 14 or volt() < 6:
             print "WARNING 02: Voltage outside of safe range: " + str(volt())
