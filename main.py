@@ -99,6 +99,7 @@ while pinkie.keepGoing():
     time.sleep(.1)
     pinkie.stop()
     pinkie.checkDistance()
+    pinkie.dance()
 
 pinkie.stop()
 del pinkie
