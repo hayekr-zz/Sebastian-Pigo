@@ -87,7 +87,7 @@ class Pigo:
     def servoShake(self):
         for x in range(5):
             servo(45)
-            servo(135)
+            servo(-45)
 ######
 ###### MAIN APP STARTS HERE
 ######
