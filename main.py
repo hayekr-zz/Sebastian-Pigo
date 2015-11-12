@@ -30,7 +30,7 @@ class Pigo:
     def fwd(self):
         self.status['ismoving'] = True
         print "Fwd"
-        for x in range(5):
+        for x in range(10):
             time.sleep(0.1)
             fwd()
 
