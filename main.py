@@ -77,15 +77,15 @@ class Pigo:
             time.sleep(2)
 
     def strobe(self):
-	    print "let's have a rager!"
-	    for x in range(7):
-		    led_on(1)
+        print "let's have a rager!"
+        for x in range(7):
+            led_on(1)
             time.sleep(.3)
-		    led_off(0)
+            led_off(0)
             time.sleep(.3)
-		    led_off(1)
+            led_off(1)
             time.sleep(.3)
-		    led_on(0)
+            led_on(0)
             time.sleep(.3)
 
     def servoShake(self):
