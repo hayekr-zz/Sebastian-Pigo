@@ -57,9 +57,37 @@ class Pigo:
     def dance(self):
         print "MONEY"
         self.spin()
-        self.shuffle()
+        self.backNForth()
+        self.strobe()
+        self.servoShake()
 
+    def spin(self):
+        for x in range(5):
+            time.sleep(0.1)
+            set_speed(251)
+            left_rot()
 
+    def backNForth(self):
+        for x in range(5)
+            time.sleep(0.1)
+            set_speed(251)
+            fwd()
+            time.sleep(2)
+            bwd()
+            time.sleep(2)
+
+    def strobe(self):
+	    print "let's have a rager!"
+	    for x in range(7):
+		    led_on(1)
+		    led_off(0)
+		    led_off(1)
+		    led_on(0)
+
+    def servoShake(self):
+        for x in range(5):
+            servo(45)
+            servo(135)
 ######
 ###### MAIN APP STARTS HERE
 ######
