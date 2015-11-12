@@ -68,7 +68,7 @@ class Pigo:
             left_rot()
 
     def backNForth(self):
-        for x in range(5)
+        for x in range(5):
             time.sleep(0.1)
             set_speed(251)
             fwd()
