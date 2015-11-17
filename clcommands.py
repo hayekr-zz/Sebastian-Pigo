@@ -13,3 +13,7 @@ elif command == "stop":
     for x in range(6):
         stop()
         disable_servo()
+
+elif command == "calibrate":
+    for x in range(5):
+        servo(90)

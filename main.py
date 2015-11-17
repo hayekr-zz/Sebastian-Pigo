@@ -1,6 +1,7 @@
 __author__ = 'Sebastian'
 from gopigo import *
 import time
+import threading
 
 #global variables begin here
 STOP_DISTANCE = 50
@@ -57,9 +58,16 @@ class Pigo:
     def dance(self):
         print "MONEY"
         self.spin()
+        dancer = threading.Thread(target=servoShake, args=(self))
+        dancer.start()
+        self.checkDistance()
         self.backNForth()
+        self.checkDistance()
         self.strobe()
+        self.checkDistance()
         self.servoShake()
+        self.checkDistance()
+        dancer.join()
 
     def spin(self):
         for x in range(5):
@@ -89,9 +97,16 @@ class Pigo:
             time.sleep(.3)
 
     def servoShake(self):
-        for x in range(5):
-            servo(45)
-            servo(-45)
+        for x in range(10):
+            servo(120)
+            time.sleep(.5)
+            servo(30)
+
+    def servoSweep(self):
+        for ang in range(20, 160, 5):
+            if ang % 3 == 0:
+                servo(ang)
+                time.sleep(.1)
 ######
 ###### MAIN APP STARTS HERE
 ######
