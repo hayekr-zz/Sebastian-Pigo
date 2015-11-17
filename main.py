@@ -58,8 +58,9 @@ class Pigo:
     def dance(self):
         print "MONEY"
         self.spin()
-        dancer = threading.Thread(target=servoShake, args=(self))
-        dancer.start()
+        #dancer = threading.Thread(target=servoShake, args=(self))
+        #dancer.start()
+        self.servoShake()
         self.checkDistance()
         self.backNForth()
         self.checkDistance()
@@ -67,7 +68,7 @@ class Pigo:
         self.checkDistance()
         self.servoShake()
         self.checkDistance()
-        dancer.join()
+        #dancer.join()
 
     def spin(self):
         for x in range(5):
