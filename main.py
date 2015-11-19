@@ -76,6 +76,7 @@ class Pigo:
             time.sleep(0.1)
             set_speed(251)
             left_rot()
+            self.checkDistance()
 
     def backNForth(self):
         for x in range(5):
@@ -121,6 +122,7 @@ while pinkie.keepGoing():
     #pinkie.stop()
     #pinkie.checkDistance()
     pinkie.dance()
+    pinkie.stop()
 
 pinkie.stop()
 del pinkie
