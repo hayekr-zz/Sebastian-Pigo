@@ -51,6 +51,15 @@ class Pigo:
         self.status['dist'] = us_dist(15)
         print "dist = " + str(self.status['dist']) + " mm"
 
+    def threadCheckDistance(self):
+        while True:
+            self.status['dist'] = us_dist(15)
+            print "dist = " + str(self.status['dist']) + " mm"
+            if self.status['dist'] < STOP_DISTANCE:
+                print "WARNING T03: Too close to object"
+                self.stop()
+                break
+
     ######
     ###### COMPLEX METHODS
     ######
@@ -115,7 +124,7 @@ class Pigo:
 pinkie = Pigo()
 
 while pinkie.keepGoing():
-    dancer = threading.Thread(group=None, target=Pigo.checkDistance, name="Swag", args=(pinkie, ), kwargs=None)
+    dancer = threading.Thread(group=None, target=Pigo.threadCheckDistance, name="Swag", args=(pinkie, ), kwargs=None)
     dancer.start()
     pinkie.spin()
 
