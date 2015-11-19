@@ -60,6 +60,7 @@ class Pigo:
         self.spin()
         #dancer = threading.Thread(target=servoShake, args=(self))
         #dancer.start()
+        """
         self.servoShake()
         self.checkDistance()
         self.backNForth()
@@ -69,7 +70,7 @@ class Pigo:
         self.servoShake()
         self.checkDistance()
         #dancer.join()
-
+        """
     def spin(self):
         for x in range(5):
             time.sleep(0.1)
