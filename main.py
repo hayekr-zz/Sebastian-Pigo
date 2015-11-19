@@ -100,7 +100,7 @@ class Pigo:
     def servoShake(self):
         for x in range(10):
             servo(120)
-            time.sleep(.5)
+            time.sleep(2)
             servo(30)
 
     def servoSweep(self):
