@@ -72,11 +72,10 @@ class Pigo:
         #dancer.join()
         """
     def spin(self):
-        for x in range(5):
-            time.sleep(0.1)
-            set_speed(251)
-            left_rot()
-            self.checkDistance()
+        time.sleep(0.1)
+        set_speed(251)
+        left_rot()
+        time.sleep(3)
 
     def backNForth(self):
         for x in range(5):
@@ -116,13 +115,9 @@ class Pigo:
 pinkie = Pigo()
 
 while pinkie.keepGoing():
-    pinkie.checkDistance()
-    #pinkie.fwd()
-    #time.sleep(.1)
-    #pinkie.stop()
-    #pinkie.checkDistance()
-    pinkie.dance()
-    pinkie.stop()
+    dancer = threading.Thread(target=checkDistance, args=(pinkie))
+    dancer.start()
+    pinkie.spin()
 
 pinkie.stop()
 del pinkie
