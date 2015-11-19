@@ -115,7 +115,7 @@ class Pigo:
 pinkie = Pigo()
 
 while pinkie.keepGoing():
-    dancer = threading.Thread(target=Pigo.checkDistance, args=pinkie)
+    dancer = threading.Thread(group=None, target=Pigo.checkDistance, name="Swag", ags=(pinkie), kwargs=None)
     dancer.start()
     pinkie.spin()
 
