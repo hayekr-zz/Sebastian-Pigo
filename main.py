@@ -41,9 +41,15 @@ class Pigo:
         if self.status['dist'] < STOP_DISTANCE:
             print "WARNING 03: Too close to object"
             return False
-        elif volt() > 14 or volt() < 6:
-            print "WARNING 02: Voltage outside of safe range: " + str(volt())
+            ###########
+            ###Bobby- This is my change to fix your volt
+            ###########
+        elif volt() > 14 or volt() < 6: #check voltage and turn off robot is voltage is under 6V or above 14V
+            print VOLT
             return False
+            ###########
+            ###Bobby- This is my change to fix your volt
+            ###########
         else:
             return True
 
@@ -133,6 +139,8 @@ while pinkie.keepGoing():
 pinkie.stop()
 del pinkie
 """
+
+"""
 __author__ = 'Sebastian'
 from gopigo import *
 import time
@@ -140,6 +148,7 @@ import threading
 
 #global variables begin here
 STOP_DISTANCE = 50
+VOLT = "HAZARDOUS VOLTAGE"
 #global variables begin here
 
 class Pigo:
@@ -175,9 +184,15 @@ class Pigo:
         if self.status['dist'] < STOP_DISTANCE:
             print "WARNING 03: Too close to object"
             return False
-        elif volt() > 14 or volt() < 6:
-            print "WARNING 02: Voltage outside of safe range: " + str(volt())
+            ###########
+            ###Bobby- This is my change to fix your volt
+            ###########
+        elif volt() > 14 or volt() < 6: #check voltage and turn off robot is voltage is under 6V or above 14V
+            print VOLT
             return False
+            ###########
+            ###Bobby- This is my change to fix your volt
+            ###########
         else:
             return True
 
