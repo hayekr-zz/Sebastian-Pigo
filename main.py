@@ -6,6 +6,7 @@ import threading
 
 #global variables begin here
 STOP_DISTANCE = 50
+VOLT = HAZARDOUS VOLTAGE#added new Global variable
 #global variables begin here
 
 class Pigo:
